@@ -5,11 +5,24 @@
 
 import Vue from 'vue';
 import Main from './pages/main.vue'
+import plugins from './utils';
+
+
+console.log('plugin:::')
+
+Vue.use(plugins)
+// Vue.mixin({
+//     methods: utils
+// })
 
 const vm = new Vue({
     el: '#app',
     render: h => h(Main)
 })
+
+
+
+
 
 // const vm = new Vue({
 //     el: '#app',

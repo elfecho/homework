@@ -1,9 +1,11 @@
 <template>
     <div>
         <div class="item multiple-image">
+            
             <h3>
                 查猪价
             </h3>
+            <echarts></echarts>
             <div>
                 <label>输入地区：</label> 
                 <input type="text" v-on:input="oninput">
@@ -17,24 +19,12 @@
 </template>
 
 <script>
-// debounce - 去抖
-const createDebouce = (delay = 1000) => {
-    let timer = null
-    return function debounce(fn){
-        // 打断
-        clearTimeout(timer)
-        // 重新计时
-        timer = setTimeout(()=>{
-            fn && fn()
-        }, delay)
-    }
-}
 export default {
     data(){
         return {
             area: '北京',
             price: 0,
-            debounce: createDebouce(3000)
+            debounce: this.createDebouce(3000)
         }
     },
     created() {
