@@ -91,6 +91,7 @@ export default {
             this.getData()
         },
         navhandle(type){
+            this.list = []
             this.type = type
         },
         isActive(typeItem){
