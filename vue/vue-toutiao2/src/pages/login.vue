@@ -1,31 +1,19 @@
 <template>
     <div>
-        <h1>登录页</h1>
-        <form action="/login" method="post" v-on:submit.prevent="loginAction" class="login-frame">
-            <div class="login-item">
-                <label>用户名：</label>
-                <input name="username" type="text" v-model="user.username" />
-            </div>
-            <div class="login-item">
-                <label>密码：</label>
-                <input name="passwd" type="password" v-model="user.password"/>
-            </div>
-            <input type="submit" value="登录" class="login"/>
-        </form>
+        <h2>这是登录页</h2>
+        <button @click="login">
+            登录
+        </button>
     </div>
 </template>
-
 <script>
 export default {
-    props: ['id'],
-    data(){
-        return {
-            user: {
-                username: '',
-                password: ''
-            }
+    methods: {
+        login(){
+            document.cookie = 'uid=123456';
+            this.$router.back()
+            console.log('document.cookie', document.cookie)
         }
     }
 }
 </script>
-

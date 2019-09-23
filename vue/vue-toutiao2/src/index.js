@@ -13,6 +13,7 @@ import Setting from './pages/setting.vue'
 import Detail from './pages/detail.vue'
 import Video from './components/detail-contents/video.vue'
 import Text from './components/detail-contents/text.vue'
+import Login from './pages/login.vue'
 
 
 
@@ -34,6 +35,10 @@ const routes = [
         component: Setting
     },
     {
+        path: '/page/login',
+        component: Login
+    },
+    {
         path: '/page/detail/:id',
         component: Detail,
         props: true,
@@ -47,11 +52,23 @@ const routes = [
                 component: Text
             }
         ]
-    }
+    },
 ];
+
 
 const router = new VueRouter({
     routes
+})
+
+router.beforeEach((to, from, next) => {
+    console.log('beforEach::')
+    if (!/uid/.test(document.cookie) 
+        && to.path !== '/page/login'
+    ) {
+        next('/page/login')
+    } else {
+        next()
+    }
 })
 const vm = new Vue({
     el: '#app',

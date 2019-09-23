@@ -35,6 +35,11 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  component: {
+    aaaaa(){
+      
+    }
   }
 }
 </script>
