@@ -1,0 +1,17 @@
+<!--components/items/multiple-pic/multiple-pic.wxml-->
+<!-- <view class="item single-pic" bind:tap="skip">
+    <view class="content">
+        <text>
+          {{data.title}}
+        </text>
+    </view>
+    <image wx:for="{{data.imageList}}" src="{{item}}"></image>
+</view> -->
+<view class="item multiple-image" bind:tap="skip">
+  <view>
+    {{data.title}}
+  </view>
+  <view class="image-list">
+    <image wx:for="{{data.imageList}}" src="{{item}}" wx:key="{{item}}"></image>
+  </view>
+</view>

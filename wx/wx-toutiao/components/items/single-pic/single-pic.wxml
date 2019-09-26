@@ -1,0 +1,9 @@
+<!--components/items/single-pic/single-pic.wxml-->
+<view class="item single-pic" bind:tap="skip">
+    <view class="content">
+        <view>
+          {{data.title}}
+        </view>
+    </view>
+    <image src="{{data.imageList[0]}}"></image>
+</view>

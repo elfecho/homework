@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<title>逻辑层</title>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"> 
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.view {
+			height: 100vh;
+			width: 100vw;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript" src="./bridge.js"></script>
+	<script type="text/javascript" src="./service.js"></script>
+	<script>
+		window.appJSON = {
+		  "pages": [
+		    "pages/index/index",
+		    "pages/detail/detail"
+		  ],
+		  "window": {
+		    "backgroundTextStyle": "light",
+		    "navigationBarBackgroundColor": "#fff",
+		    "navigationBarTitleText": "头条",
+		    "navigationBarTextStyle": "black"
+		  },
+		  "sitemapLocation": "sitemap.json"
+		}
+		Page('pages/index/index',{
+			data: {
+				name: '袁鑫'
+			}
+		})
+		
+	</script>
+	<script>
+		window.logic.init()
+	</script>
+</body>
+</html>

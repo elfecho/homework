@@ -1,0 +1,28 @@
+/* components/items/multiple-pic/multiple-pic.wxss */
+
+.item {
+  min-height: 42rpx;
+  padding: 16rpx 0;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.6);
+}
+
+.item.multiple-image h3 {
+  font-size: 28rpx;
+}
+
+.item.multiple-image .image-list {
+  margin-top: 20rpx;
+}
+
+.item.multiple-image .image-list image {
+  width: 33%;
+}
+
+.item.big-pic h3 {
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+}

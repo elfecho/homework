@@ -1,8 +1,10 @@
 var http = require('http')
 var https = require('https')
+var fs = require('fs')
+
 var app = http.createServer((req, res) => {
     const APPID = 'wx6f82132a4ceaa5de'
-    const SECRET = '85e3400fc9e3194ed87622927c16fbb0'
+    const SECRET = 'fb26175577bf4a2a1ec4ad2649482da3'
     
     if (/login/.test(req.url)) {
         // login的逻辑
@@ -16,9 +18,9 @@ var app = http.createServer((req, res) => {
                     str += chunk
                 })
                 resHandler.on('end', function() {
-                    console.log(str)
                     res.write(JSON.stringify({
-                        errMsg: JSON.stringify(JSCODE)
+                        data: JSON.parse(str),
+                        errMsg: "ok"
                     }))
                     res.end()
                 })
@@ -28,30 +30,12 @@ var app = http.createServer((req, res) => {
         
         
     } else {
-        const result = {
-            data: [
-                {
-                    type: 'singlePic',
-                    data: {
-                        title: '测试标题1',
-                        imageList: [
-                            ''
-                        ]
-                    }
-                },
-                {
-                    type: 'multiplePic',
-                    data: {
-                        title: '测试标题1',
-                        imageList: [
-                            ''
-                        ]
-                    }
-                }
-            ]
-        };
-        res.write(JSON.stringify(result))
-        res.end()
+        fs.readFile(__dirname + '/list___all__.json', 'utf-8', function (err, content) {
+            // console.log('err:', err, content); 
+            res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+            res.write(content);
+            res.end();
+        });
     }
 
     

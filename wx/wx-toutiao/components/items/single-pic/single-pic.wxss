@@ -1,0 +1,21 @@
+/* components/items/multiple-pic/multiple-pic.wxss */
+.item {
+  min-height: 42rpx;
+  padding: 16rpx 0;
+  border-bottom: 1px solid rgba(221, 221, 221, 0.6);
+}
+.single-pic {
+    display: flex;
+    margin-top: 20rpx;
+}
+
+.single-pic .content {
+    flex: 2;
+    font-size: 28rpx;
+    padding-right: 24px;
+}
+
+.single-pic image {
+    width: 33%;
+    display: block;
+}

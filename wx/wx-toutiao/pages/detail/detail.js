@@ -1,31 +1,22 @@
-// pages/index/home.js
+// pages/detail/detail.js
+var app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.login()
+
   },
-  login(){
-    wx.login({
-      success(res){
-        wx.request({
-          url: `http://127.0.0.1:9000/login?code=${res.code}`,
-          success(res){
-            console.log('res', res)
-          }
-        })
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
